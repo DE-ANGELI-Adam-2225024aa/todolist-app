@@ -57,15 +57,15 @@ class TodoApp extends React.Component {
                                     checked={item.done}
                                 />
                                 <span className={item.done ? 'done' : ''}>{item.text}</span>
-                                <button onClick={() => this.delTask(item.id)}>-</button>
+                                <button onClick={() => this.delTask(item.id)}>🗑️</button>
                                 {index > 0 && (
                                     <button onClick={() => this.changeOrder(index, index - 1)}>
-                                        ⬆️
+                                        ⬆
                                     </button>
                                 )}
                                 {index < filteredItems.length - 1 && (
                                     <button onClick={() => this.changeOrder(index, index + 1)}>
-                                        ⬇️
+                                        ⬇
                                     </button>
                                 )}
                             </label>

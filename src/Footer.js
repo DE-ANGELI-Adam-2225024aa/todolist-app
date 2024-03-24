@@ -7,17 +7,12 @@ class Footer extends React.Component {
         this.state = {
             inputValue: '',
         };
-        this.handleInputChange = this.handleInputChange.bind(this);
         this.handleAddTask = this.handleAddTask.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
     }
 
-    handleInputChange(event) {
-        this.setState({ inputValue: event.target.value });
-    }
-
     handleAddTask() {
-        const taskTitle = this.state.inputValue.trim();
+        const taskTitle = prompt("Entrez le nom de la tâche");
         if (taskTitle) {
             this.props.addTask(taskTitle);
             this.setState({ inputValue: '' });
@@ -37,12 +32,7 @@ class Footer extends React.Component {
                     value={this.props.searchText}
                     onChange={this.handleSearch}
                 />
-                <input
-                    type="text"
-                    placeholder="nom de la tache"
-                    value={this.state.inputValue}
-                    onChange={this.handleInputChange}
-                />
+                <br/>
                 <button onClick={this.handleAddTask}>Ajouter une tâche</button>
             </div>
         );
